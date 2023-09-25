@@ -1,0 +1,29 @@
+{
+    "Push": {
+        "checkpoints": [
+            {
+                "steps": 178564,
+                "file_path": "results\\pushblock-with-raycast\\Push\\Push-178564.onnx",
+                "reward": null,
+                "creation_time": 1695668668.7954812,
+                "auxillary_file_paths": [
+                    "results\\pushblock-with-raycast\\Push\\Push-178564.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 178564,
+            "file_path": "results\\pushblock-with-raycast\\Push.onnx",
+            "reward": null,
+            "creation_time": 1695668668.7954812,
+            "auxillary_file_paths": [
+                "results\\pushblock-with-raycast\\Push\\Push-178564.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}

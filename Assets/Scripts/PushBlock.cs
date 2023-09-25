@@ -9,7 +9,7 @@ public class PushBlock : Agent
 {
     Rigidbody ball;
     private int currentStep = 0;
-    private int maxSteps = 5000;
+    private int maxSteps = 15000;
     void Start()
     {
         ball = GetComponent<Rigidbody>();
@@ -69,7 +69,7 @@ public class PushBlock : Agent
         {
             this.ball.angularVelocity = Vector3.zero;
             this.ball.velocity = Vector3.zero;
-            this.transform.localPosition = new Vector3(0, 1.8f, 0);
+            this.transform.localPosition = new Vector3(0, 0.6f, 0);
         }
 
         // Move the target to a new spot
@@ -92,10 +92,19 @@ public class PushBlock : Agent
     }
 
     public float forceMultiplier = 10;
+
+    private void OnCollisionEnter(Collision col) {
+        if(col.gameObject.name == "Cube"){
+            // float collisionForce = col.relativeVelocity.magnitude;
+            SetReward(0.1f);
+            // Debug.Log("Collision with cube, reward = " + 0.01f  * collisionForce);
+        }
+    }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         // Actions, size = 2
         currentStep++;
+        SetReward(-1f/MaxStep);
         Vector3 controlSignal = Vector3.zero;
         controlSignal.x = actionBuffers.ContinuousActions[0];
         controlSignal.z = actionBuffers.ContinuousActions[1];
@@ -107,7 +116,7 @@ public class PushBlock : Agent
         // Reached target
         if (distanceToTarget < 5.64f)
         {
-            SetReward(1.0f);
+            SetReward(5.0f);
             EndEpisode();
         }
 
@@ -117,11 +126,11 @@ public class PushBlock : Agent
         }
 
         // Fell off platform
-        // else if (this.transform.localPosition.y < 0)
-        // {
-        //     SetReward(-0.1f);
-        //     EndEpisode();
-        // }
+        else if (this.transform.localPosition.y < 0)
+        {
+            SetReward(-1f);
+            EndEpisode();
+        }
         // else{
         //     SetReward(distanceToTarget*0.01f);
         //     Debug.Log(distanceToTarget*0.01f);
