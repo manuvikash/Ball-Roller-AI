@@ -4,7 +4,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
-public class RollerAgent : Agent
+public class RollerAgentRotating : Agent
 {
     Rigidbody ball;
     void Start()
@@ -13,7 +13,7 @@ public class RollerAgent : Agent
     }
 
     public Transform Target;
-    // public Transform Obstacle;
+    public Transform Plane;
     public override void OnEpisodeBegin()
     {
         // If the Agent fell from the platform, zero its momentum
@@ -26,7 +26,7 @@ public class RollerAgent : Agent
 
         // Move the target to a new spot
         Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
-      
+        Plane.localRotation = Quaternion.Euler(Random.value * 6 - 3, Random.value * 6 - 3, Random.value * 6 - 3);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -34,7 +34,7 @@ public class RollerAgent : Agent
         // Target and Agent positions
         sensor.AddObservation(Target.localPosition);
         sensor.AddObservation(this.transform.localPosition);
-
+        sensor.AddObservation(Plane.localRotation);
         // Agent velocity
         sensor.AddObservation(ball.velocity.x);
         sensor.AddObservation(ball.velocity.z);
