@@ -9,7 +9,7 @@ public class PushBlock : Agent
 {
     Rigidbody ball;
     private int currentStep = 0;
-    private int maxSteps;
+    // private int maxSteps = 20000;
     private Vector3 lastBlockPosition;
     void Start()
     {
@@ -66,13 +66,9 @@ public class PushBlock : Agent
      public override void OnEpisodeBegin()
     {
         currentStep = 0;
-        // If the Agent fell from the platform, zero its momentum
-        if (this.transform.localPosition.y < 0)
-        {
-            this.ball.angularVelocity = Vector3.zero;
-            this.ball.velocity = Vector3.zero;
-            this.transform.localPosition = new Vector3(0, 0.6f, 0);
-        }
+        this.ball.angularVelocity = Vector3.zero;
+        this.ball.velocity = Vector3.zero;
+        this.transform.localPosition = new Vector3(0, 0.6f, 0);
 
         // Move the target to a new spot
         System.Random random = new System.Random();
@@ -88,12 +84,9 @@ public class PushBlock : Agent
         sensor.AddObservation(Block.localPosition);
         sensor.AddObservation(this.transform.localPosition);
         sensor.AddObservation(MiniPlane.localPosition);
-        // Agent velocity
-        sensor.AddObservation(ball.velocity.x);
-        sensor.AddObservation(ball.velocity.z);
     }
 
-    public float forceMultiplier;
+    public float forceMultiplier = 100;
 
     // private void OnCollisionEnter(Collision col) {
     //     if(col.gameObject.name == "Cube"){
@@ -140,7 +133,7 @@ public class PushBlock : Agent
         // Actions, size = 2
         currentStep++;
         MoveAgent(actionBuffers.DiscreteActions);
-        SetReward(-0.1f/MaxStep);
+        SetReward(-1f/MaxStep);
         // Debug.Log("Delay reward = " + -0.1/MaxStep);
         // Vector3 controlSignal = Vector3.zero;
         // controlSignal.x = actionBuffers.ContinuousActions[0];
@@ -154,20 +147,23 @@ public class PushBlock : Agent
         // Reached target
 
         if(distanceToTarget < oldDistancetoTarget){
-            SetReward(0.1f * oldDistancetoTarget - distanceToTarget);
+            SetReward(1f * oldDistancetoTarget - distanceToTarget);
         }
         lastBlockPosition = Block.transform.localPosition;
         if (distanceToTarget < 5.64f)
         {
-            SetReward(5.0f);
-            Debug.Log("Success Reward");
+            SetReward(10.0f);
             EndEpisode();
         }
 
-        if(currentStep == maxSteps){
-            currentStep = 0;
+        if(Block.localPosition.y < 0 || Block.localPosition.y > 1.5){
             EndEpisode();
         }
+
+        // if(currentStep == maxSteps){
+        //     currentStep = 0;
+        //     EndEpisode();
+        // }
 
         // Fell off platform
         else if (this.transform.localPosition.y < 0)
