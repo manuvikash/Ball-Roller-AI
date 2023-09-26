@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1695720189",
+        "python_version": "3.9.12 (main, Apr  4 2022, 05:22:27) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "D:\\code\\Unity-RL\\venv\\Scripts\\mlagents-learn .\\Configs\\pushBlock.yaml",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.0.1+cu117",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1695720213"
+    },
+    "total": 24.119561499999996,
+    "count": 1,
+    "self": 0.032585500000003265,
+    "children": {
+        "run_training.setup": {
+            "total": 0.17004900000000056,
+            "count": 1,
+            "self": 0.17004900000000056
+        },
+        "TrainerController.start_learning": {
+            "total": 23.916926999999994,
+            "count": 1,
+            "self": 0.0013034999999916863,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 23.915579,
+                    "count": 1,
+                    "self": 23.915579
+                },
+                "trainer_threads": {
+                    "total": 3.999999997006398e-06,
+                    "count": 1,
+                    "self": 3.999999997006398e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 4.050000000432874e-05,
+                    "count": 1,
+                    "self": 4.050000000432874e-05
+                }
+            }
+        }
+    }
+}

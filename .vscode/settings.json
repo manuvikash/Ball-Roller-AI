@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Ball-roller.sln"
+    "dotnet.defaultSolution": "Ball-Roller-AI.sln"
 }
