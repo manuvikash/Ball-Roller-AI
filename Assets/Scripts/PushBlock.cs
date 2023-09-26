@@ -11,6 +11,7 @@ public class PushBlock : Agent
     private int currentStep = 0;
     // private int maxSteps = 20000;
     private Vector3 lastBlockPosition;
+    public Rigidbody BlockObj;
     void Start()
     {
         ball = GetComponent<Rigidbody>();
@@ -18,6 +19,7 @@ public class PushBlock : Agent
     }
 
     public Transform Block;
+     
     public Transform MiniPlane;
     public Transform Plane;
 
@@ -75,6 +77,8 @@ public class PushBlock : Agent
         int[] miniPlanePos = miniPlaneLocations[random.Next(0, miniPlaneLocations.Length)];
         MiniPlane.localPosition = new Vector3(miniPlanePos[0], 0.0001f, miniPlanePos[1]);
         Block.localPosition = this.calcBlockPos(miniPlanePos[0], miniPlanePos[1]);
+        BlockObj.velocity = Vector3.zero;
+        
 
     }
 

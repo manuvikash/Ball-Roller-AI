@@ -339,6 +339,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &418450717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2763413381190568621, guid: 8bb17f7c96e340e4891feb130370f77a, type: 3}
+  m_PrefabInstance: {fileID: 4782676191688570211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &418450727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418450717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 1
+  NumStepsToRecord: 20000
+  DemonstrationName: PushBlock-demo
+  DemonstrationDirectory: Demos
 --- !u!1001 &548787560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1224,6 +1245,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb17f7c96e340e4891feb130370f77a, type: 3}
+--- !u!54 &1920420303 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5893429871258951483, guid: 8bb17f7c96e340e4891feb130370f77a, type: 3}
+  m_PrefabInstance: {fileID: 4782676191688570211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4782676191688570211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1296,10 +1322,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7911196725858279107, guid: 8bb17f7c96e340e4891feb130370f77a, type: 3}
+      propertyPath: BlockObj
+      value: 
+      objectReference: {fileID: 1920420303}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2763413381190568621, guid: 8bb17f7c96e340e4891feb130370f77a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 418450727}
   m_SourcePrefab: {fileID: 100100000, guid: 8bb17f7c96e340e4891feb130370f77a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
