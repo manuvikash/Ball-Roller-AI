@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1698053134",
+        "python_version": "3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "D:\\Code\\Unity-RL\\venv\\Scripts\\mlagents-learn .\\Configs\\pushBlocks.yaml --run-id=Double-blocks-4 --force",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.0.1+cu118",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1698053140"
+    },
+    "total": 6.0618076,
+    "count": 1,
+    "self": 0.004770499999999345,
+    "children": {
+        "run_training.setup": {
+            "total": 0.0835338000000001,
+            "count": 1,
+            "self": 0.0835338000000001
+        },
+        "TrainerController.start_learning": {
+            "total": 5.973503300000001,
+            "count": 1,
+            "self": 0.00012969999999956627,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 5.973358800000001,
+                    "count": 1,
+                    "self": 5.973358800000001
+                },
+                "TrainerController._save_models": {
+                    "total": 1.4800000000647628e-05,
+                    "count": 1,
+                    "self": 1.4800000000647628e-05
+                }
+            }
+        }
+    }
+}

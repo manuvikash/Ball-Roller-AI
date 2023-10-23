@@ -9,7 +9,7 @@ public class newAgent : Agent
 {
     Rigidbody agent;
     private int currentStep = 0;
-    private int maxSteps = 50000;
+    private int maxSteps = 35000;
     private bool inTarget1 = false;
     private bool inTarget2 = false;
 
@@ -44,6 +44,8 @@ public class newAgent : Agent
         this.transform.localPosition = new Vector3(-21, 0.8f, 0);
         Block1.localPosition = calcBlockSpawn(1);
         Block2.localPosition = calcBlockSpawn(2);
+        inTarget1 = false;
+        inTarget2 = false;
     }
 
      public override void CollectObservations(VectorSensor sensor)
@@ -52,6 +54,8 @@ public class newAgent : Agent
         sensor.AddObservation(this.transform.localPosition);
         sensor.AddObservation(Target1.localPosition);
         sensor.AddObservation(Target2.localPosition);
+        sensor.AddObservation(Block1.localPosition);
+        sensor.AddObservation(Block2.localPosition);
     }
 
     public float forceMultiplier = 60;
@@ -90,23 +94,53 @@ public class newAgent : Agent
 
     public float calculateMovementReward(Transform Block, Transform Target){
         float distanceToTarget = Vector3.Distance(Block.transform.localPosition,Target.transform.localPosition);
-        float oldDistancetoTarget = Vector3.Distance(Block.transform.localPosition, Target.transform.localPosition);
-        if(distanceToTarget < oldDistancetoTarget){
-            return 1f* (oldDistancetoTarget - distanceToTarget);
+        float oldDistancetoTarget;
+        if(Block.name == "Block1"){
+            oldDistancetoTarget = Vector3.Distance(oldBlock1Pos, Target.transform.localPosition);
         }
         else{
-            return 0f;
+            oldDistancetoTarget = Vector3.Distance(oldBlock2Pos, Target.transform.localPosition);
         }
+        
+        if(distanceToTarget < oldDistancetoTarget){
+            // Debug.Log(Block.name + " --- " + 1f* (oldDistancetoTarget - distanceToTarget));
+            return 5f* (oldDistancetoTarget - distanceToTarget);
+        }
+        else{
+            return 0;
+        }
+    }
+    public void targetEntry(GameObject obj){
+        if(obj.name == "Target1"){
+            inTarget1 = true;
+        }
+        else{
+            inTarget2=true;
+        }
+        SetReward(50);
+    }
+
+    public void targetExit(GameObject obj){
+        if(obj.name == "Target1"){
+            inTarget1 = false;
+        }
+        else{
+            inTarget2=false;
+        }
+        SetReward(-100);
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         // Actions, size = 2
         currentStep++;
         MoveAgent(actionBuffers.DiscreteActions);
-        SetReward(-1f/MaxStep);
+        SetReward(-10f/MaxStep);
         //For block1
         SetReward(calculateMovementReward(Block1, Target1));
         SetReward(calculateMovementReward(Block2, Target2));
+
+        oldBlock1Pos = Block1.transform.localPosition;
+        oldBlock2Pos = Block2.transform.localPosition;
 
         if(currentStep == maxSteps){
             currentStep = 0;
@@ -114,7 +148,11 @@ public class newAgent : Agent
         }
 
         if(inTarget1 && inTarget2){
-            SetReward(100);
+            SetReward(200);
+            EndEpisode();
+        }
+
+        if(this.transform.localPosition.y < -1f){
             EndEpisode();
         }
     }
@@ -139,25 +177,5 @@ public class newAgent : Agent
         {
             discreteActionsOut[0] = 2;
         }
-    }
-
-    public void targetEntry(GameObject obj){
-        if(obj.name == "Target1"){
-            inTarget1 = true;
-        }
-        else{
-            inTarget2=true;
-        }
-        SetReward(30);
-    }
-
-    public void targetExit(GameObject obj){
-        if(obj.name == "Target1"){
-            inTarget1 = false;
-        }
-        else{
-            inTarget2=false;
-        }
-        SetReward(-30);
     }
 }
