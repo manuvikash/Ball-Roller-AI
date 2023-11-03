@@ -1,0 +1,65 @@
+{
+    "Push": {
+        "checkpoints": [
+            {
+                "steps": 499968,
+                "file_path": "results\\five-blocks-1\\Push\\Push-499968.onnx",
+                "reward": null,
+                "creation_time": 1698937062.8464673,
+                "auxillary_file_paths": [
+                    "results\\five-blocks-1\\Push\\Push-499968.pt"
+                ]
+            },
+            {
+                "steps": 999997,
+                "file_path": "results\\five-blocks-1\\Push\\Push-999997.onnx",
+                "reward": null,
+                "creation_time": 1698937703.3577683,
+                "auxillary_file_paths": [
+                    "results\\five-blocks-1\\Push\\Push-999997.pt"
+                ]
+            },
+            {
+                "steps": 1499955,
+                "file_path": "results\\five-blocks-1\\Push\\Push-1499955.onnx",
+                "reward": null,
+                "creation_time": 1698938346.3962038,
+                "auxillary_file_paths": [
+                    "results\\five-blocks-1\\Push\\Push-1499955.pt"
+                ]
+            },
+            {
+                "steps": 1999970,
+                "file_path": "results\\five-blocks-1\\Push\\Push-1999970.onnx",
+                "reward": null,
+                "creation_time": 1698938989.527894,
+                "auxillary_file_paths": [
+                    "results\\five-blocks-1\\Push\\Push-1999970.pt"
+                ]
+            },
+            {
+                "steps": 2000098,
+                "file_path": "results\\five-blocks-1\\Push\\Push-2000098.onnx",
+                "reward": null,
+                "creation_time": 1698938989.6030948,
+                "auxillary_file_paths": [
+                    "results\\five-blocks-1\\Push\\Push-2000098.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2000098,
+            "file_path": "results\\five-blocks-1\\Push.onnx",
+            "reward": null,
+            "creation_time": 1698938989.6030948,
+            "auxillary_file_paths": [
+                "results\\five-blocks-1\\Push\\Push-2000098.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}

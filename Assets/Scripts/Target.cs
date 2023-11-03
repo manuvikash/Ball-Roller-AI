@@ -11,13 +11,13 @@ public class Target : MonoBehaviour
     }
    public void OnTriggerEnter(Collider other) {
     if(other.CompareTag("Block")){
-        agent.targetEntry(this.gameObject);
+        agent.targetEntry(other.name);
     }
    }
 
    public void OnTriggerExit(Collider other) {
     if(other.CompareTag("Block")){
-        agent.targetExit(this.gameObject);
+        agent.targetExit(other.name);
     }
    }
 }

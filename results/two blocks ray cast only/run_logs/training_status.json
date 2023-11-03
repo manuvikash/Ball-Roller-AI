@@ -1,0 +1,65 @@
+{
+    "Push": {
+        "checkpoints": [
+            {
+                "steps": 499967,
+                "file_path": "results\\two blocks ray cast only\\Push\\Push-499967.onnx",
+                "reward": null,
+                "creation_time": 1698672494.551,
+                "auxillary_file_paths": [
+                    "results\\two blocks ray cast only\\Push\\Push-499967.pt"
+                ]
+            },
+            {
+                "steps": 999992,
+                "file_path": "results\\two blocks ray cast only\\Push\\Push-999992.onnx",
+                "reward": null,
+                "creation_time": 1698673053.482649,
+                "auxillary_file_paths": [
+                    "results\\two blocks ray cast only\\Push\\Push-999992.pt"
+                ]
+            },
+            {
+                "steps": 1499972,
+                "file_path": "results\\two blocks ray cast only\\Push\\Push-1499972.onnx",
+                "reward": null,
+                "creation_time": 1698673606.0299358,
+                "auxillary_file_paths": [
+                    "results\\two blocks ray cast only\\Push\\Push-1499972.pt"
+                ]
+            },
+            {
+                "steps": 1999925,
+                "file_path": "results\\two blocks ray cast only\\Push\\Push-1999925.onnx",
+                "reward": null,
+                "creation_time": 1698674163.7735622,
+                "auxillary_file_paths": [
+                    "results\\two blocks ray cast only\\Push\\Push-1999925.pt"
+                ]
+            },
+            {
+                "steps": 2000025,
+                "file_path": "results\\two blocks ray cast only\\Push\\Push-2000025.onnx",
+                "reward": null,
+                "creation_time": 1698674163.8230302,
+                "auxillary_file_paths": [
+                    "results\\two blocks ray cast only\\Push\\Push-2000025.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2000025,
+            "file_path": "results\\two blocks ray cast only\\Push.onnx",
+            "reward": null,
+            "creation_time": 1698674163.8230302,
+            "auxillary_file_paths": [
+                "results\\two blocks ray cast only\\Push\\Push-2000025.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}

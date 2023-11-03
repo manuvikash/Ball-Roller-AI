@@ -1,0 +1,65 @@
+{
+    "Push": {
+        "checkpoints": [
+            {
+                "steps": 499951,
+                "file_path": "results\\two blocks with minimal input\\Push\\Push-499951.onnx",
+                "reward": 1.6098737716674805,
+                "creation_time": 1698676849.8206146,
+                "auxillary_file_paths": [
+                    "results\\two blocks with minimal input\\Push\\Push-499951.pt"
+                ]
+            },
+            {
+                "steps": 999984,
+                "file_path": "results\\two blocks with minimal input\\Push\\Push-999984.onnx",
+                "reward": 112.63284289836884,
+                "creation_time": 1698677414.7495708,
+                "auxillary_file_paths": [
+                    "results\\two blocks with minimal input\\Push\\Push-999984.pt"
+                ]
+            },
+            {
+                "steps": 1499991,
+                "file_path": "results\\two blocks with minimal input\\Push\\Push-1499991.onnx",
+                "reward": null,
+                "creation_time": 1698678049.5506198,
+                "auxillary_file_paths": [
+                    "results\\two blocks with minimal input\\Push\\Push-1499991.pt"
+                ]
+            },
+            {
+                "steps": 1999996,
+                "file_path": "results\\two blocks with minimal input\\Push\\Push-1999996.onnx",
+                "reward": -99.24544334411621,
+                "creation_time": 1698678669.5979092,
+                "auxillary_file_paths": [
+                    "results\\two blocks with minimal input\\Push\\Push-1999996.pt"
+                ]
+            },
+            {
+                "steps": 2000096,
+                "file_path": "results\\two blocks with minimal input\\Push\\Push-2000096.onnx",
+                "reward": -99.24544334411621,
+                "creation_time": 1698678669.6540947,
+                "auxillary_file_paths": [
+                    "results\\two blocks with minimal input\\Push\\Push-2000096.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2000096,
+            "file_path": "results\\two blocks with minimal input\\Push.onnx",
+            "reward": -99.24544334411621,
+            "creation_time": 1698678669.6540947,
+            "auxillary_file_paths": [
+                "results\\two blocks with minimal input\\Push\\Push-2000096.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}
