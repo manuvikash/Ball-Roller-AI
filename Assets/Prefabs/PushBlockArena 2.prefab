@@ -642,6 +642,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 5000
+  BlockObj: {fileID: 5893429871258951483}
   Block: {fileID: 4329801479679420970}
   MiniPlane: {fileID: 9111017891423399403}
   Plane: {fileID: 4112881278542993730}
@@ -937,6 +938,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 20000
+  BlockObj: {fileID: 0}
   Block: {fileID: 4329801479679420970}
   MiniPlane: {fileID: 9111017891423399403}
   Plane: {fileID: 4112881278542993730}

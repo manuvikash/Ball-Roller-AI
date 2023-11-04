@@ -35,7 +35,7 @@ public class newAgent : Agent
 
     private float[] randomTargetPos(){
         float [][] targetPosArr = new float[][]{
-            new float[] {-30, -12, 90, 10, -12, 90 },
+            new float[] {-30.5f, -12, 90, 10, -12, 90 },
             new float[] {-12, -12, 90, -12, -12, 90 },
             new float[] {0, 0, 0, 0, 0, 0},
             new float[] {0, -18.6f, 0, 0, 21.8f, 0}

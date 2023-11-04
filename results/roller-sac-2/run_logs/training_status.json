@@ -1,0 +1,29 @@
+{
+    "Roll": {
+        "checkpoints": [
+            {
+                "steps": 86705,
+                "file_path": "results\\roller-sac-2\\Roll\\Roll-86705.onnx",
+                "reward": null,
+                "creation_time": 1699043348.7218451,
+                "auxillary_file_paths": [
+                    "results\\roller-sac-2\\Roll\\Roll-86705.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 86705,
+            "file_path": "results\\roller-sac-2\\Roll.onnx",
+            "reward": null,
+            "creation_time": 1699043348.7218451,
+            "auxillary_file_paths": [
+                "results\\roller-sac-2\\Roll\\Roll-86705.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu118"
+    }
+}
